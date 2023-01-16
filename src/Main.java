@@ -51,22 +51,12 @@ public class Main {
         System.out.println("Задание 3:");
 
         short year = (short) getRandomNumber(1500, 2024);
-        boolean leapCheck;
 
-        if (year % 4 != 0)
-            leapCheck = false;
-        else if (year % 400 == 0)
-            leapCheck = true;
-        else if (year % 100 == 0)
-            leapCheck = false;
+
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+            System.out.println(year + " ялвяется высокосным.");
         else
-            leapCheck = true;
-
-
-        if (leapCheck)
-            System.out.println(year + " год является високосным");
-        else
-            System.out.println(year + " год не является високосным");
+            System.out.println(year + " не ялвяется высокосным.");
 
         System.out.println();
     }
@@ -74,16 +64,16 @@ public class Main {
     public static void task4() {
         System.out.println("Задание 4:");
         short deliveryDistance = (short) getRandomNumber(0, 150);
-        int noDays = 0;
+        int noDays = 1;
 
-        if (deliveryDistance < 20)
-            noDays = 1;
-        else if (deliveryDistance >= 20 && deliveryDistance < 60)
-            noDays = 2;
-        else if (deliveryDistance >= 60 && deliveryDistance < 100)
-            noDays = 3;
+        if (deliveryDistance > 20)
+            noDays++;
+        if (deliveryDistance > 60)
+            noDays++;
+        if (deliveryDistance > 100)
+            noDays++;
 
-        if (noDays == 0)
+        if (noDays > 3)
             System.out.println("Доставки нет");
         else
             System.out.println("Потребуется дней: " + noDays);
@@ -97,49 +87,30 @@ public class Main {
         byte month = (byte) getRandomNumber(1, 16);
         System.out.println("Номер месяца: " + month);
 
-        char season;
-
         if (month < 13) {
             switch (month) {
                 case 1:
                 case 12:
                 case 2:
-                    season = 'w' ;
+                    System.out.println("Это зимний месяц");
                     break;
                 case 3:
                 case 4:
                 case 5:
-                    season = 's' ;
+                    System.out.println("Это весенний месяц");
                     break;
                 case 6:
                 case 7:
                 case 8:
-                    season = 'm' ;
+                    System.out.println("Это летний месяц");
                     break;
                 case 9:
                 case 10:
                 case 11:
-                    season = 'a' ;
-                    break;
-                default:
-                    season = 'n' ;
-            }
-
-            switch (season) {
-                case 'w':
-                    System.out.println("Это зимний месяц");
-                    break;
-                case 's':
-                    System.out.println("Это весенний месяц");
-                    break;
-                case 'm':
-                    System.out.println("Это летний месяц");
-                    break;
-                case 'a':
                     System.out.println("Это осенний месяц");
                     break;
                 default:
-                    System.out.println("Возникла ошибка");
+                    System.out.println("некорректный месяц");
             }
         }
 
