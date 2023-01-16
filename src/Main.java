@@ -13,16 +13,11 @@ public class Main {
 
         byte clientOS = (byte) getRandomNumber(0, 2);
 
-        switch (clientOS) {
-            case 0:
+        if (clientOS == 1)
                 System.out.println("Установите версию приложения для iOS по ссылке");
-                break;
-            case 1:
-                System.out.println("Установите версию приложения для Android по ссылке");
-                break;
-            default:
-                System.out.println("Ошбика.");
-        }
+        else
+            System.out.println("Установите версию приложения для Android по ссылке");
+
         System.out.println();
     }
 
@@ -32,17 +27,18 @@ public class Main {
         byte clientOS = (byte) getRandomNumber(0, 2);
         short clientDeviceYear = (short) getRandomNumber(2009, 2021);
 
-        if (clientDeviceYear < 2015 && clientOS == 0)
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-
-        else if (clientDeviceYear >= 2015 && clientOS == 0)
-            System.out.println("Установите версию приложения для iOS по ссылке");
-
-        else if (clientDeviceYear < 2015 && clientOS == 1)
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-
-        else
-            System.out.println("Установите версию приложения для Android по ссылке");
+        if (clientOS == 0 ) {
+            if (clientDeviceYear < 2015)
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            else
+                System.out.println("Установите версию приложения для iOS по ссылке");
+        }
+        if (clientOS == 1 ) {
+            if (clientDeviceYear < 2015)
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+            else
+                System.out.println("Установите версию приложения для Android по ссылке");
+        }
 
         System.out.println();
     }
