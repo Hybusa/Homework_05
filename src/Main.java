@@ -14,7 +14,7 @@ public class Main {
         byte clientOS = (byte) getRandomNumber(0, 2);
 
         if (clientOS == 1)
-                System.out.println("Установите версию приложения для iOS по ссылке");
+            System.out.println("Установите версию приложения для iOS по ссылке");
         else
             System.out.println("Установите версию приложения для Android по ссылке");
 
@@ -27,13 +27,13 @@ public class Main {
         byte clientOS = (byte) getRandomNumber(0, 2);
         short clientDeviceYear = (short) getRandomNumber(2009, 2021);
 
-        if (clientOS == 0 ) {
+        if (clientOS == 0) {
             if (clientDeviceYear < 2015)
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             else
                 System.out.println("Установите версию приложения для iOS по ссылке");
         }
-        if (clientOS == 1 ) {
+        if (clientOS == 1) {
             if (clientDeviceYear < 2015)
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
             else
@@ -62,14 +62,15 @@ public class Main {
         short deliveryDistance = (short) getRandomNumber(0, 150);
         int noDays = 1;
 
+        if (deliveryDistance > 100)
+            System.out.println("Доставки нет");
         if (deliveryDistance > 20)
             noDays++;
         if (deliveryDistance > 60)
             noDays++;
-        if (deliveryDistance > 100)
-            System.out.println("Доставки нет");
 
-            System.out.println("Потребуется дней: " + noDays);
+
+        System.out.println("Потребуется дней: " + noDays);
 
         System.out.println();
     }
