@@ -62,8 +62,10 @@ public class Main {
         short deliveryDistance = (short) getRandomNumber(0, 150);
         int noDays = 1;
 
-        if (deliveryDistance > 100)
+        if (deliveryDistance > 100) {
             System.out.println("Доставки нет");
+            return;
+        }
         if (deliveryDistance > 20)
             noDays++;
         if (deliveryDistance > 60)
