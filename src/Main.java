@@ -67,11 +67,8 @@ public class Main {
         if (deliveryDistance > 60)
             noDays++;
         if (deliveryDistance > 100)
-            noDays++;
-
-        if (noDays > 3)
             System.out.println("Доставки нет");
-        else
+
             System.out.println("Потребуется дней: " + noDays);
 
         System.out.println();
